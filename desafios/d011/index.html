@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronauta</title>
+    <style>
+        @keyframes girar {
+            100% {
+                transform: translate(-50%, -50%) rotate(-360deg);
+            }
+        }
+
+        @keyframes mover {
+            0% {
+                top: 10%;
+                left: 10%;
+            }
+            20% {
+                top: 90%;
+                left: 90%;
+            }
+            40% {
+                top: 50%;
+                left: 90%;
+            }
+            60% {
+                top: 84%;
+                left: 90%;
+            }
+            80% {
+                top: 80%;
+                left: 20%;
+            }
+            100% {
+                top: 10%;
+                left: 10%;
+            }
+        }
+
+        body {
+            overflow: hidden;
+            margin: 0;
+        }
+
+        #espaco {
+            background-color: black;
+            background-image: url(imagens/espaco.jpg);
+            background-size: cover;
+            
+            position: relative;
+            height: 100vh;
+        }
+
+        #astronauta {
+            background-image: url(imagens/astronauta.png);
+            background-size: 100% 100%;
+            
+            position: absolute;
+            height: 500px;
+            width: 500px;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            animation: girar 60s linear infinite, mover 180s linear infinite
+        }
+    </style>
+</head>
+<body>
+    <div id="espaco"></div>
+    <div id="astronauta"></div>
+</body>
+</html>
