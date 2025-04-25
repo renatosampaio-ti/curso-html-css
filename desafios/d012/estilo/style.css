@@ -1,90 +1,148 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
-
+:root {
+    --cor-do-texto: #1a1c20;
+    --cor-do-link: #4a76ee;
+    --cor-do-fundo: #eeeff1;
+}
 
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-do-fundo);
 }
 
+a {
+    color: var(--cor-do-link);
+    text-decoration: none;
+}
 
-header {
+/* NAVBAR */
+nav {
     display: flex;
-    padding: 50px;
-    justify-content: center;
-    background-color: rgb(255, 255, 255);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    height: 90px;
 }
 
-header nav ul {
-    font-family: 'JetBrains Mono';
-    font-size: 1em;
-    font-weight: bold;
+nav .esquerda a {
+    color: var(--cor-do-texto);
+    font-size: 22px;
+    font-weight: 600;
+}
+
+nav .direita a {
+    color: var(--cor-do-texto);
+    margin: 0 10px;
+}
+
+nav .direita a:last-child {
+    color: var(--cor-do-fundo);
+    background-color: var(--cor-do-texto);
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+nav .direita a  span {
+    margin-left: 5px;
+}
+
+/* SECTION 1: Hero */
+.hero-section {
     display: flex;
-    color: rgb(0, 0, 0);
-    gap: 30px;
-    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    margin: 50px 0;
+    margin-bottom: 100px;
+    gap: 40px;
 }
 
-header nav ul li {
+.hero-section .texto {
+    flex: 5;
+}
+
+.hero-section .texto h2 {
+    font-size: 45px;
+}
+
+.hero-section .texto .links {
+    margin-top: 25px;
+}
+
+.hero-section .texto .links a {
     display: inline-block;
+    padding: 5px 10px;
+    border: 2px solid var(--cor-do-link);
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: .1s;
 }
 
-header nav li:hover {
-    cursor: pointer;
-    text-decoration: underline;
+.hero-section .texto .links a:hover {
+    color: var(--cor-do-texto);
+    border: 2px solid var(--cor-do-texto);
 }
 
-#capa {
+.hero-section .fotorosto {
+    flex: 2;
     display: flex;
-    padding: 50px;
-    gap: 50px;
-    justify-content: space-evenly;
+    justify-content: right;
 }
 
-#ap1 {
-    font-family: 'JetBrains Mono';
-    font-size: 3.5em;
-    color: rgb(0, 0, 0);
-    margin-bottom: 50px;
-    line-height: 1.1;
+.hero-section .fotorosto img {
+    width: 350px;
 }
 
-#ap2 {
-    font-family: 'JetBrains Mono';
-    font-size: 1.8em;
-    color: rgb(0, 0, 0);
-    width: 500px;
+@media (max-width: 850px) {
+/* SECTION 1: Hero */
+    .hero-section .texto h2 {
+        font-size: 35px;
+    }
 }
 
-#capa strong {
-    font-size: 1.5em;
-    color: #140021;
+
+@media (max-width: 740px) {
+/* SECTION 1: Hero */
+    .hero-section {
+        flex-direction: column-reverse;
+    }
+
+    .hero-section .fotorosto img {
+        width: 300px;
+    }
 }
 
-#capa picture img {
-    height: 500px;
-    width: 500px;
-}
 
-#social {
-    display: flex;
-    padding: 50px;
-}
+@media (max-width: 600px) {
+    /* NAVBAR */
+    nav {
+        padding: 0 20px;
+    }
 
-#social ul {
-    display: flex;
-    list-style: none;
-    margin: auto;
-    gap: 30px;
-}
-
-#social ul img {
-    width: 64px;
-    height: 64px;
+    nav .direita a {
+        font-size: 22px;
+    }
+    
+    nav .direita a:last-child {
+        color: var(--cor-do-texto);
+        background-color: transparent;
+        padding: 0;
+    }
+    
+    nav .direita a span {
+        display: none;
+    }
 }
 
